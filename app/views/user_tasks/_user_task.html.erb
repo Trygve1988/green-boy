@@ -1,0 +1,9 @@
+<div id="<%= dom_id user_task %>">
+  <p>
+    <%= user_task.id %>
+    <%= image_tag(user_task.task.image_url) %>
+    <%= user_task.task.name %> -
+    <%= user_task.task.points %>p -
+    <%= user_task.complete %>
+  </p>
+</div>

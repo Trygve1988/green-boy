@@ -1,0 +1,22 @@
+<%= form_with(model: tesk) do |form| %>
+  <% if tesk.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(tesk.errors.count, "error") %> prohibited this tesk from being saved:</h2>
+
+      <ul>
+        <% tesk.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

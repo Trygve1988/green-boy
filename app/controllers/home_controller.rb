@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @tasks = Task.all
+    @user_tasks = UserTask.all
   end
 end

@@ -1,0 +1,15 @@
+<%= render @tesk %>
+
+<% Tesk::STATUSES.each do |status| %>
+  <%= button_to change_status_tesk_path(@tesk, status: status), method: :patch do %>
+    <%= status %>
+  <% end %>
+<% end %>
+<br><br><br><br>
+
+<div>
+  <%= link_to "Edit this tesk", edit_tesk_path(@tesk) %> |
+  <%= link_to "Back to tesks", tesks_path %>
+
+  <%= button_to "Destroy this tesk", @tesk, method: :delete %>
+</div>

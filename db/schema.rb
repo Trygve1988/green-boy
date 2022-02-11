@@ -23,6 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_11_215204) do
   end
 
   create_table "user_tasks", force: :cascade do |t|
+    t.boolean "complete", default: false
     t.bigint "user_id", null: false
     t.bigint "task_id", null: false
     t.datetime "created_at", null: false
