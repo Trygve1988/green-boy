@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <nav>
+      <a href="/">Home</a>
+      <%= link_to 'Privacy', privacy_index_url %>
+      <%= link_to 'Terms of Service', terms_of_service_index_url %>
+    </nav>
+
     <%= yield %>
+
   </body>
 </html>
