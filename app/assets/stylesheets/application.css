@@ -16,9 +16,11 @@
 body {
     background-color: #FEFADC;
 }
+
 img {
     width: 30px;
 }
+
 h1{
     text-align: center;
 }
@@ -27,7 +29,7 @@ p {
     font-size: 20px;
 }
 
-/* nav */
+/*******  nav *******/
 nav {
     position:absolute;
     bottom:0;
@@ -38,7 +40,7 @@ nav a {
     margin: 20px;
 }
 
-/* button */
+/******* button *******/
 button {
     text-align: left;
     width: 600px;
@@ -52,3 +54,17 @@ button {
     background-color: #3F612D;
 }
 
+/*******  tasks *******/
+#tasks {
+    margin: auto;
+    width: 50%;
+}
+@media only screen and (max-width: 600px) {
+    #tasks {
+        width: 100%;
+    }
+}
+
+#total_points {
+    text-align: center;
+}
