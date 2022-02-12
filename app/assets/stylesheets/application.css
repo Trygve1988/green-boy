@@ -13,9 +13,16 @@
  *= require_tree .
  *= require_self
  */
+body {
+    background-color: #FEFADC;
+}
 img {
     width: 30px;
 }
+h1{
+    text-align: center;
+}
+
 p {
     font-size: 20px;
 }
@@ -31,6 +38,7 @@ nav a {
     margin: 20px;
 }
 
+/* button */
 button {
     text-align: left;
     width: 600px;
@@ -41,6 +49,6 @@ button {
     }
 }
 .green_button {
-    background-color: green;
+    background-color: #3F612D;
 }
 
