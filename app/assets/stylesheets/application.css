@@ -21,10 +21,6 @@ img {
     width: 30px;
 }
 
-h1{
-    text-align: center;
-}
-
 p {
     font-size: 20px;
 }
@@ -55,16 +51,8 @@ button {
 }
 
 /*******  tasks *******/
-#tasks {
-    margin: auto;
-    width: 50%;
-}
 @media only screen and (max-width: 600px) {
     #tasks {
         width: 100%;
     }
-}
-
-#total_points {
-    text-align: center;
 }
