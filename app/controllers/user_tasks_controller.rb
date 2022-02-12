@@ -1,16 +1,24 @@
 class UserTasksController < ApplicationController
-  before_action :set_tesk, only: %i[ update ]
+  def index
+    @user_tasks = UserTask.order(:id)
 
-  def update
-    puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaa"
-    @user_task.complete = true
-    @user_task.update
+    @points = 0
+    @user_tasks.each do |user_task|
+      if user_task.complete
+        @points += user_task.task.points
+      end
+    end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_task
-      @user_task = UserTask.find(params[:id])
+  def change_status
+    @user_task = UserTask.find(params[:id])
+    if @user_task.complete
+      @user_task.complete = false
+    else
+      @user_task.complete = true
     end
+    @user_task.save
+    redirect_back(fallback_location: root_path)
+  end
 
 end

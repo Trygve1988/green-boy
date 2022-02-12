@@ -4,6 +4,7 @@
   <%= button_to change_status_tesk_path(@tesk, status: status), method: :patch do %>
     <%= status %>
   <% end %>
+
 <% end %>
 <br><br><br><br>
 

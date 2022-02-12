@@ -17,7 +17,7 @@ img {
     width: 30px;
 }
 p {
-    font-size: 22px;
+    font-size: 24px;
 }
 
 /* nav */
@@ -29,5 +29,14 @@ nav {
 nav a {
     font-size: 26px;
     margin: 20px;
+}
+
+/* button */
+button {
+    width: 340px;
+}
+
+.green_button {
+    background-color: green;
 }
 

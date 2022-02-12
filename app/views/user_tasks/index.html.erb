@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Todays challanges</h1>
+
+<div id="tasks">
+  <% @user_tasks.each do |user_task| %>
+
+    <% if user_task.complete %>
+      <%= button_to change_status_user_task_path(user_task), method: :patch, class: "green_button" do %>
+        <%= render user_task %>
+      <% end %>
+    <% else %>
+      <%= button_to change_status_user_task_path(user_task), method: :patch do %>
+        <%= render user_task %>
+      <% end %>
+    <% end %>
+
+  <% end %>
+
+</div>
+<p>
+  Total points today: <%= @points %>
+</p>
+
+
+

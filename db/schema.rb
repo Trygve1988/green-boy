@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_11_215204) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_11_234450) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,6 +18,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_11_215204) do
     t.string "name"
     t.string "image_url", default: "logo.png"
     t.integer "points", default: 10
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tesks", force: :cascade do |t|
+    t.string "description"
+    t.string "status", default: "planned"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
