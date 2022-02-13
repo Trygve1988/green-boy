@@ -1,7 +1,6 @@
 class UserTasksController < ApplicationController
   def index
     @user_tasks = UserTask.order(:id)
-
     @points = 0
     @user_tasks.each do |user_task|
       if user_task.complete

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'search/index'
   resources :users
   resources :tasks
   resources :user_tasks
