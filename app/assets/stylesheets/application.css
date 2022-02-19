@@ -13,27 +13,32 @@
  *= require_tree .
  *= require_self
  */
-body {
-    background-color: #FEFADC;
+
+:root {
+    --green-light: #EEF7F7;
+    --green: #3AAFA9;
+    --green-dark: #2B7A78;
+    --purple: #6200EE;
+    --blue: #5085A5;
+    --gray: #37474F;
+    --yellow: #FEFADC;
+}
+
+.body {
+    background-color: var(--yellow);
 }
 
 img {
     width: 30px;
 }
 
-p {
-    font-size: 20px;
+/******* nav *******/
+.nav-icon{
+    color: #FFFFFF;
 }
 
-/*******  nav *******/
-nav {
-    position:absolute;
-    bottom:0;
-}
-
-nav a {
-    font-size: 26px;
-    margin: 10px;
+.nav-icon:hover {
+    color:black
 }
 
 /******* button *******/
@@ -45,9 +50,6 @@ button {
     button {
         width: 100%;
     }
-}
-.green_button {
-    background-color: #3F612D;
 }
 
 /*******  tasks *******/
