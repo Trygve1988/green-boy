@@ -1,18 +1,15 @@
 Rails.application.routes.draw do
-  resources :posts
-  get 'search/index'
   resources :users
   resources :tasks
-  resources :user_tasks
-
-  resources :user_tasks do
+  resources :daily_challenges do
     member do
       patch :change_status
     end
   end
+  resources :daily_tasks
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "user_tasks#index"
+  root "daily_challenges#index"
 end

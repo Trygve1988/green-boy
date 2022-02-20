@@ -10,9 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_11_215204) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_20_051432) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "daily_challenges", force: :cascade do |t|
+    t.date "date"
+    t.integer "total_score", default: 0
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_daily_challenges_on_user_id"
+  end
+
+  create_table "daily_tasks", force: :cascade do |t|
+    t.boolean "complete", default: false
+    t.bigint "daily_challenge_id", null: false
+    t.bigint "task_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["daily_challenge_id"], name: "index_daily_tasks_on_daily_challenge_id"
+    t.index ["task_id"], name: "index_daily_tasks_on_task_id"
+  end
 
   create_table "tasks", force: :cascade do |t|
     t.string "name"
@@ -22,16 +41,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_11_215204) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_tasks", force: :cascade do |t|
-    t.boolean "complete", default: false
-    t.bigint "user_id", null: false
-    t.bigint "task_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["task_id"], name: "index_user_tasks_on_task_id"
-    t.index ["user_id"], name: "index_user_tasks_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password"
@@ -39,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_11_215204) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "user_tasks", "tasks"
-  add_foreign_key "user_tasks", "users"
+  add_foreign_key "daily_challenges", "users"
+  add_foreign_key "daily_tasks", "daily_challenges"
+  add_foreign_key "daily_tasks", "tasks"
 end

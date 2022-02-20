@@ -5,7 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-UserTask.delete_all
+#
+DailyTask.delete_all
+DailyChallenge.delete_all
 Task.delete_all
 User.delete_all
 
@@ -20,11 +22,13 @@ Task.create!(id: 8, name: 'Use a compost bin', logo: 'compost', points: 20)
 
 User.create!(id: 1, username: 'test_user', password: '123')
 
-UserTask.create!(id: 1, user_id: 1, task_id: 1)
-UserTask.create!(id: 2, user_id: 1, task_id: 2)
-UserTask.create!(id: 3, user_id: 1, task_id: 3)
-UserTask.create!(id: 4, user_id: 1, task_id: 4)
-UserTask.create!(id: 5, user_id: 1, task_id: 5)
-UserTask.create!(id: 6, user_id: 1, task_id: 6)
-UserTask.create!(id: 7, user_id: 1, task_id: 7)
-UserTask.create!(id: 8, user_id: 1, task_id: 8)
+DailyChallenge.create!(id: 1, date: '2022.02.20', user_id: 1)
+
+DailyTask.create!(id: 1, daily_challenge_id: 1, task_id: 1)
+DailyTask.create!(id: 2, daily_challenge_id: 1, task_id: 2)
+DailyTask.create!(id: 3, daily_challenge_id: 1, task_id: 3)
+DailyTask.create!(id: 4, daily_challenge_id: 1, task_id: 4)
+DailyTask.create!(id: 5, daily_challenge_id: 1, task_id: 5)
+DailyTask.create!(id: 6, daily_challenge_id: 1, task_id: 6)
+DailyTask.create!(id: 7, daily_challenge_id: 1, task_id: 7)
+DailyTask.create!(id: 8, daily_challenge_id: 1, task_id: 8)

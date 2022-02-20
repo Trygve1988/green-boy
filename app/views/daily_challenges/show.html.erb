@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="container">
+
+  <div class="row">
+    <h1>Daily Challenge</h1>
+  </div>
+
+  <br>
+
+  <div class="row tasks">
+    <%= render @daily_challenge.daily_tasks %>
+  </div>
+
+</div>
+
+<div id="daily_challenge">
+  <%= render @daily_challenge %>
+</div>
+
+
+
+<div>
+  <%= link_to "Back to daily challenges", daily_challenges_path %>
+</div>

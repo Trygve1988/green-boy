@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Daily challenges</h1>
+
+<div id="daily_challenges">
+  <% @daily_challenges.each do |daily_challenge| %>
+    <%= daily_challenge.user.username %>
+    <%= daily_challenge.date %>
+    <%= link_to "Show", daily_challenge %>
+
+  <% end %>
+</div>
+
