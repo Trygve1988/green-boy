@@ -15,12 +15,7 @@
  */
 
 :root {
-    --green-light: #EEF7F7;
-    --green: #3AAFA9;
-    --green-dark: #2B7A78;
-    --purple: #6200EE;
-    --blue: #5085A5;
-    --gray: #37474F;
+    --green: #519259;
     --yellow: #FEFADC;
 }
 
@@ -33,8 +28,13 @@ img {
 }
 
 /******* nav *******/
+.navbar {
+    color: white;
+    background-color: var(--green);
+}
+
 .nav-icon{
-    color: #FFFFFF;
+    color: white;
 }
 
 .nav-icon:hover {
@@ -42,12 +42,13 @@ img {
 }
 
 /******* button *******/
-button {
+.tasks button {
     text-align: left;
     width: 600px;
 }
+
 @media only screen and (max-width: 600px) {
-    button {
+    .tasks button {
         width: 100%;
     }
 }

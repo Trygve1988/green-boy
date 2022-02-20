@@ -20,15 +20,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_19_024516) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "searches", force: :cascade do |t|
-    t.string "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "tasks", force: :cascade do |t|
     t.string "name"
-    t.string "image_url", default: "logo.png"
+    t.string "logo", default: "light"
     t.integer "points", default: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

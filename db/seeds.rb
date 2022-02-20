@@ -9,11 +9,14 @@ UserTask.delete_all
 Task.delete_all
 User.delete_all
 
-Task.create!(id: 1, name: 'Turn of the lights')
-Task.create!(id: 2, name: 'Take a short shower', points: 20)
-Task.create!(id: 3, name: 'Bike to school/work', points: 40)
-Task.create!(id: 4, name: 'Use a reusable shopping bag')
-Task.create!(id: 5, name: 'Eat a vegan meal', points: 20)
+Task.create!(id: 1, name: 'Turn of the lights', logo: 'light')
+Task.create!(id: 2, name: 'Take a short shower', logo: 'shower', points: 20)
+Task.create!(id: 3, name: 'Walk or bike to school/work', logo: 'directions_walk',points: 40)
+Task.create!(id: 4, name: 'Use public transport', logo: 'directions_bus',points: 30)
+Task.create!(id: 5, name: 'Use a reusable shopping bag', logo: 'recycling')
+Task.create!(id: 6, name: 'Eat a vegan meal', logo: 'restaurant_menu', points: 20)
+Task.create!(id: 7, name: 'Plant a food plant', logo: 'grass', points: 20)
+Task.create!(id: 8, name: 'Use a compost bin', logo: 'compost', points: 20)
 
 User.create!(id: 1, username: 'test_user', password: '123')
 
@@ -22,3 +25,6 @@ UserTask.create!(id: 2, user_id: 1, task_id: 2)
 UserTask.create!(id: 3, user_id: 1, task_id: 3)
 UserTask.create!(id: 4, user_id: 1, task_id: 4)
 UserTask.create!(id: 5, user_id: 1, task_id: 5)
+UserTask.create!(id: 6, user_id: 1, task_id: 6)
+UserTask.create!(id: 7, user_id: 1, task_id: 7)
+UserTask.create!(id: 8, user_id: 1, task_id: 8)

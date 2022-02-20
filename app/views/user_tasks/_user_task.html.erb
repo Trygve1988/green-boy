@@ -1,7 +1,11 @@
 <div id="<%= dom_id user_task %>">
   <p>
-    <%= image_tag(user_task.task.image_url) %>
+    <span class="material-icons"><%= user_task.task.logo %> </span>
     <%= user_task.task.name %> -
     <%= user_task.task.points %>p
   </p>
 </div>
+
+
+
+
