@@ -1,15 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
-<%= turbo_stream_from :posts %>
+<div id="new_post">
+  <%= render partial: 'posts/form', locals: { post: Post.new } %>
+</div>
 
-<%= turbo_frame_tag :post_form do %>
-  <%= render 'posts/form', post: @post %>
-<% end %>
-
-
-
-
-
-<%= turbo_frame_tag :posts do %>
+<div id="posts">
   <%= render @posts %>
-<% end %>
+</div>

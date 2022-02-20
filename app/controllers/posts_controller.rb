@@ -11,6 +11,16 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     respond_to do |format|
       if @post.save
+        format.turbo_stream do
+          render turbo_stream: [
+            turbo_stream.update('new_post',
+                                partial: "posts/form",
+                                locals: {post: Post.new}),
+            turbo_stream.prepend('posts',
+                                 partial: "posts/post",
+                                 locals: {post: @post})
+          ]
+        end
         format.html { redirect_to posts_path }
         format.json { render :show, status: :created, location: @post }
       else

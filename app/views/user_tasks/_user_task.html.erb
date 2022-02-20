@@ -1,10 +1,21 @@
 <div id="<%= dom_id user_task %>">
-  <p>
-    <span class="material-icons"><%= user_task.task.logo %> </span>
-    <%= user_task.task.name %> -
-    <%= user_task.task.points %>p
-  </p>
+  <% if user_task.complete %>
+    <%= button_to change_status_user_task_path(user_task), method: :patch, class: "btn btn-success" do %>
+      <span class="material-icons"><%= user_task.task.logo %> </span>
+      <%= user_task.task.name %> -
+      <%= user_task.task.points %>p
+    <% end %>
+
+  <% else %>
+    <%= button_to change_status_user_task_path(user_task), method: :patch, class: "btn btn-light" do %>
+      <span class="material-icons"><%= user_task.task.logo %> </span>
+      <%= user_task.task.name %> -
+      <%= user_task.task.points %>p
+    <% end %>
+  <% end %>
 </div>
+
+
 
 
 

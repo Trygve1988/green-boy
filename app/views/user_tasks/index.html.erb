@@ -9,28 +9,14 @@
   <br>
 
   <div class="row tasks">
-    <% @user_tasks.each do |user_task| %>
-      <% if user_task.complete %>
-        <%= button_to change_status_user_task_path(user_task), method: :patch, class: "btn btn-success" do %>
-          <%= render user_task %>
-        <% end %>
-      <% else %>
-        <%= button_to change_status_user_task_path(user_task), method: :patch, class: "btn btn-light" do %>
-          <%= render user_task %>
-        <% end %>
-      <% end %>
-    <% end %>
+    <%= render @user_tasks %>
   </div>
 
   <br>
 
   <div class="row">
-    <div class="mb-3">
-      <p>Total score today: <%= @points %></p>
-    </div>
+    <p>Total score today: <%= @points %></p>
   </div>
-
-
 
 </div>
 

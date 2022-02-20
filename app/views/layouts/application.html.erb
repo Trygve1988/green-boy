@@ -23,7 +23,8 @@
     <div class="container">
 
       <div class="row">
-          <%= yield %>
+        <%= Time.zone.now.strftime("%H:%M:%S") %>
+        <%= yield %>
       </div>
 
       <div class="row">
