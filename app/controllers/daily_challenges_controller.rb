@@ -1,13 +1,13 @@
 class DailyChallengesController < ApplicationController
-  before_action :set_daily_challenge, only: %i[ show ]
 
   # GET /daily_challenges or /daily_challenges.json
   def index
-    @daily_challenges = DailyChallenge.all
+    @daily_challenges = DailyChallenge.order(:id)
   end
 
   # GET /daily_challenges/1 or /daily_challenges/1.json
   def show
+    @daily_challenge = DailyChallenge.find(params[:id])
   end
 
   def change_status
@@ -40,10 +40,6 @@ class DailyChallengesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_daily_challenge
-      @daily_challenge = DailyChallenge.find(params[:id])
-    end
 
     # Only allow a list of trusted parameters through.
     def daily_challenge_params

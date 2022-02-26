@@ -2,6 +2,7 @@
   <% if daily_task.complete %>
     <%= button_to change_status_daily_challenge_path(daily_task), method: :patch, class: "btn btn-success" do %>
       <span class="material-icons"><%= daily_task.task.logo %> </span>
+      <%= daily_task.task.id %>
       <%= daily_task.task.name %> -
       <%= daily_task.task.points %>p
     <% end %>
@@ -9,6 +10,7 @@
   <% else %>
     <%= button_to change_status_daily_challenge_path(daily_task), method: :patch, class: "btn btn-light" do %>
       <span class="material-icons"><%= daily_task.task.logo %> </span>
+      <%= daily_task.task.id %>
       <%= daily_task.task.name %> -
       <%= daily_task.task.points %>p
     <% end %>
