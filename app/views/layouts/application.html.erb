@@ -16,21 +16,23 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   </head>
-
   <body class="body">
 
-    <div class="container">
+    <%= render 'layouts/bottom_navbar' %>
 
-      <div class="row">
-        <%= Time.zone.now.strftime("%H:%M:%S") %>
-        <%= yield %>
+    <div id="main-container" class="container mb-5 mb-lg-0" >
+      <div id="main-row" class="row">
+        <div id="left-col" class="col-0 col-md-2 p-0 m-0">
+        </div>
+        <div id="center-col" class="col">
+          <%= yield %>
+        </div>
+        <div id="right-col" class="col-0 col-md-2 p-0 m-0">
+        </div>
       </div>
-
-      <div class="row">
-        <%= render 'layouts/bottom_navbar' %>
-      </div>
-
     </div>
 
   </body>
 </html>
+
+
